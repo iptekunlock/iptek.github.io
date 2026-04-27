@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Download Software</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6 flex items-center gap-3">
+      <!-- Android & iPhone Icons -->
+      <div class="flex items-center gap-2">
+        <!-- Android Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.6 9.48l1.43-2.49a.5.5 0 10-.87-.5l-1.46 2.54A8.02 8.02 0 0012 8c-1.66 0-3.2.5-4.48 1.35L6.06 6.5a.5.5 0 10-.87.5l1.43 2.49A7.97 7.97 0 004 14v5a1 1 0 001 1h1v-6h1v6h2v-6h2v6h2v-6h2v6h2v-6h1v6h1a1 1 0 001-1v-5c0-1.9-.66-3.64-1.74-5.02z"/>
+        </svg>
+        <!-- Apple (iPhone) Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-gray-800" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16.37 1.43c0 1.14-.42 2.19-1.12 2.97-.77.86-2.03 1.52-3.15 1.43-.14-1.1.42-2.23 1.12-3 .77-.86 2.1-1.48 3.15-1.4zM21 17.3c-.58 1.36-.85 1.97-1.6 3.1-1.04 1.56-2.5 3.5-4.3 3.52-1.6.02-2.01-1.04-4.19-1.03-2.18.01-2.63 1.05-4.23 1.03-1.8-.02-3.17-1.77-4.21-3.33C.68 17.1-.7 12.1 1.22 8.72c1.35-2.35 3.78-3.84 6.39-3.86 1.69-.02 3.29 1.14 4.19 1.14.9 0 2.84-1.41 4.79-1.2.82.03 3.12.33 4.6 2.49-.12.08-2.75 1.6-2.72 4.78.03 3.8 3.34 5.06 3.38 5.07z"/>
+        </svg>
+      </div>
+      Dashboard Download Software
+    </h1>
+
+    <!-- Search -->
+    <input id="search" type="text" placeholder="Cari software..." 
+      class="w-full mb-6 p-3 border rounded-xl shadow-sm" onkeyup="filterSoftware()">
+
+    <!-- Grid -->
+    <div id="softwareList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card -->
+      <div class="software-card bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold">Google Chrome</h2>
+        <p class="text-gray-600 mb-4">Browser cepat dan populer.</p>
+        <a href="https://www.google.com/chrome/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Download</a>
+      </div>
+
+      <div class="software-card bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold">Visual Studio Code</h2>
+        <p class="text-gray-600 mb-4">Editor kode ringan dan powerful.</p>
+        <a href="https://code.visualstudio.com/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Download</a>
+      </div>
+
+      <div class="software-card bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold">WinRAR</h2>
+        <p class="text-gray-600 mb-4">Software kompresi file.</p>
+        <a href="https://www.win-rar.com/download.html" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Download</a>
+      </div>
+
+      <div class="software-card bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold">VLC Media Player</h2>
+        <p class="text-gray-600 mb-4">Pemutar video semua format.</p>
+        <a href="https://www.videolan.org/vlc/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Download</a>
+      </div>
+
+      <div class="software-card bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold">Notepad++</h2>
+        <p class="text-gray-600 mb-4">Text editor untuk coding.</p>
+        <a href="https://notepad-plus-plus.org/downloads/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Download</a>
+      </div>
+
+      <div class="software-card bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold">7-Zip</h2>
+        <p class="text-gray-600 mb-4">Alternatif kompresi gratis.</p>
+        <a href="https://www.7-zip.org/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl">Download</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function filterSoftware() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const cards = document.getElementsByClassName('software-card');
+
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+        cards[i].style.display = title.includes(input) ? '' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>
